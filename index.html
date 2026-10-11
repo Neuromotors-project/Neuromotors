@@ -1,367 +1,40 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOU-TE! | Explora la motricitat</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --fons: #f6f3eb;
-      --tinta: #20221e;
-      --coral: #f19a91;
-      --groc: #f2c66d;
-      --verd: #8fc8b5;
-      --blau: #9fb9ed;
-      --lila: #d0b1e8;
-      --taronja: #f0a66f;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 25px;
-    }
-
-    body {
-      margin: 0;
-      background: var(--fons);
-      color: var(--tinta);
-      font-family: "DM Sans", sans-serif;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 6%;
-      border-bottom: 1px solid #dedbd2;
-    }
-
-    .marca {
-      font-family: "Space Grotesk", sans-serif;
-      font-weight: 700;
-      letter-spacing: -1px;
-      font-size: 1.35rem;
-    }
-
-    .marca span { color: #e77e70; }
-
-    .etiqueta {
-      font-size: .72rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .portada {
-      min-height: 740px;
-      padding: 55px 6% 80px;
-      overflow: hidden;
-    }
-
-    .introduccio {
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .introduccio .etiqueta { color: #77766e; }
-
-    h1 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(4rem, 10vw, 8rem);
-      line-height: .92;
-      letter-spacing: -.09em;
-      margin: 20px 0;
-    }
-
-    h1 span { color: #e77e70; }
-
-    .subtitol {
-      max-width: 430px;
-      margin: 20px auto;
-      line-height: 1.7;
-      color: #66665f;
-    }
-
-    .mapa {
-      max-width: 1000px;
-      height: 400px;
-      position: relative;
-      margin: 5px auto 0;
-    }
-
-    .orbita {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 270px;
-      height: 270px;
-      border: 1px dashed #c9c5b9;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .centre {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 125px;
-      height: 125px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      border-radius: 50%;
-      background: var(--tinta);
-      color: white;
-      font-size: .76rem;
-      line-height: 1.5;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .cercle {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      text-decoration: none;
-      color: var(--tinta);
-      text-align: center;
-      padding: 15px;
-      transition: transform .3s ease, box-shadow .3s ease;
-      animation: flota 5s ease-in-out infinite;
-    }
-
-    .cercle:hover, .cercle:focus-visible {
-      transform: scale(1.1) rotate(-4deg);
-      box-shadow: 0 12px 35px #20221e20;
-      z-index: 3;
-      outline: 2px solid var(--tinta);
-      outline-offset: 3px;
-    }
-
-    .cercle b {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 1rem;
-      line-height: 1.1;
-    }
-
-    .cercle small {
-      margin-top: 8px;
-      font-size: .67rem;
-      letter-spacing: 1px;
-    }
-
-    .c1 { background: var(--coral); left: 12%; top: 2%; }
-    .c2 { background: var(--groc); right: 12%; top: 0; animation-delay: -.8s; }
-    .c3 { background: var(--verd); left: 1%; bottom: 0; animation-delay: -1.6s; }
-    .c4 { background: var(--blau); right: 1%; bottom: 0; animation-delay: -2.4s; }
-    .c5 { background: var(--lila); left: 35%; top: -2%; animation-delay: -3.2s; }
-    .c6 { background: var(--taronja); left: 43%; bottom: -7%; animation-delay: -2s; }
-
-    @keyframes flota {
-      0%, 100% { margin-top: 0; }
-      50% { margin-top: -9px; }
-    }
-
-    .pista {
-      text-align: center;
-      font-size: .8rem;
-      color: #77766e;
-      letter-spacing: 1px;
-    }
-
-    .contingut {
-      padding: 75px 7%;
-      border-top: 1px solid #dedbd2;
-    }
-
-    .contingut:nth-of-type(even) {
-      background: #eeebe2;
-    }
-
-    .contingut .numero {
-      font-size: .75rem;
-      letter-spacing: 2px;
-      color: #77766e;
-    }
-
-    .contingut h2 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(2.3rem, 6vw, 4.5rem);
-      letter-spacing: -.06em;
-      margin: 12px 0 20px;
-    }
-
-    .contingut p {
-      max-width: 650px;
-      line-height: 1.85;
-      color: #55564f;
-    }
-
-    .tornar {
-      display: inline-block;
-      margin-top: 20px;
-      color: var(--tinta);
-      text-underline-offset: 5px;
-      font-weight: 700;
-    }
-
-    footer {
-      padding: 30px 6%;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      font-size: .78rem;
-    }
-
-    @media (max-width: 650px) {
-      header { padding: 20px 5%; }
-      .etiqueta { font-size: .6rem; }
-      .portada { padding: 55px 4% 45px; min-height: 0; }
-      .mapa { height: 470px; margin-top: 25px; }
-      .orbita { width: 175px; height: 175px; }
-      .centre { width: 90px; height: 90px; font-size: .62rem; }
-      .cercle { width: 112px; height: 112px; padding: 9px; }
-      .cercle b { font-size: .78rem; }
-      .cercle small { font-size: .56rem; }
-      .c1 { left: 0; top: 5%; }
-      .c2 { right: 0; top: 5%; }
-      .c3 { left: 0; bottom: 8%; }
-      .c4 { right: 0; bottom: 8%; }
-      .c5 { left: 50%; top: 34%; transform: translateX(-50%); }
-      .c5:hover { transform: translateX(-50%) scale(1.08); }
-      .c6 { left: 50%; bottom: -3%; transform: translateX(-50%); }
-      .c6:hover { transform: translateX(-50%) scale(1.08); }
-      .contingut { padding: 55px 7%; }
-      footer { flex-direction: column; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Un viatge visual pel moviment i les habilitats motrius.">
+  <title>NEUROMOTORS — Explora el moviment</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <header>
-    <div class="marca">MOU<span>.</span>TE!</div>
-    <div class="etiqueta">Un viatge pel moviment</div>
-  </header>
-
-  <main>
-    <section class="portada" id="inici">
-      <div class="introduccio">
-        <div class="etiqueta">Cos · Moviment · Aprenentatge</div>
-        <h1>EL COS<br>EN <span>ACCIÓ.</span></h1>
-        <p class="subtitol">
-          Explora les habilitats i capacitats que ens permeten
-          descobrir, entendre i moure'ns pel món.
-        </p>
-      </div>
-
-      <nav class="mapa" aria-label="Apartats principals">
-        <div class="orbita" aria-hidden="true"></div>
-        <div class="centre">EXPLORA<br>EL MOVIMENT</div>
-
-        <a class="cercle c1" href="#inici">
-          <small>01 / INICI</small><b>Pàgina<br>d'inici</b>
-        </a>
-        <a class="cercle c2" href="#qui-som">
-          <small>02 / EQUIP</small><b>Qui<br>som?</b>
-        </a>
-        <a class="cercle c3" href="#habilitats">
-          <small>03 / ACCIÓ</small><b>Habilitats<br>motrius</b>
-        </a>
-        <a class="cercle c4" href="#capacitats">
-          <small>04 / COS</small><b>Capacitats<br>perceptiu-motrius</b>
-        </a>
-        <a class="cercle c5" href="#revisio">
-          <small>05 / OPINIÓ</small><b>Revisió entre<br>iguals</b>
-        </a>
-        <a class="cercle c6" href="#referencies">
-          <small>06 / FONTS</small><b>Referències<br>bibliogràfiques</b>
-        </a>
-      </nav>
-
-      <p class="pista">↓ TRIA UN CERCLE I COMENÇA A EXPLORAR ↓</p>
-    </section>
-
-    <section class="contingut" id="qui-som">
-      <div class="numero">02 — L'EQUIP</div>
-      <h2>Qui som?</h2>
-      <p>
-        Som [nom del grup] i aquest projecte neix amb la voluntat
-        d'explorar el moviment i la seva importància en l'educació física.
-        Aquí podeu presentar els membres de l'equip, els objectius i
-        què heu après durant el treball.
-      </p>
-      <a class="tornar" href="#inici">↑ Tornar al mapa</a>
-    </section>
-
-    <section class="contingut" id="habilitats">
-      <div class="numero">03 — EL MOVIMENT</div>
-      <h2>Habilitats motrius</h2>
-      <p>
-        En aquest apartat podeu explicar les habilitats motrius,
-        classificar-les i afegir exemples pràctics, fotografies o
-        vídeos que ajudin a entendre com es manifesten en el moviment.
-      </p>
-      <a class="tornar" href="#inici">↑ Tornar al mapa</a>
-    </section>
-
-    <section class="contingut" id="capacitats">
-      <div class="numero">04 — PERCEPCIÓ I CONTROL</div>
-      <h2>Capacitats perceptiu-motrius</h2>
-      <p>
-        Desenvolupeu conceptes com la coordinació, l'equilibri,
-        l'orientació espacial, el ritme i la percepció del propi cos,
-        amb definicions i activitats d'exemple.
-      </p>
-      <a class="tornar" href="#inici">↑ Tornar al mapa</a>
-    </section>
-
-    <section class="contingut" id="revisio">
-      <div class="numero">05 — REFLEXIÓ</div>
-      <h2>Revisió entre iguals</h2>
-      <p>
-        Recolliu les valoracions dels companys, els aspectes més
-        ben resolts del projecte i les millores que heu identificat.
-      </p>
-      <a class="tornar" href="#inici">↑ Tornar al mapa</a>
-    </section>
-
-    <section class="contingut" id="referencies">
-      <div class="numero">06 — DOCUMENTACIÓ</div>
-      <h2>Referències bibliogràfiques</h2>
-      <p>
-        Afegiu les fonts que realment heu consultat: llibres,
-        articles científics, materials docents i recursos digitals.
-        Manteniu un mateix estil de citació al llarg de la llista.
-      </p>
-      <a class="tornar" href="#inici">↑ Tornar al mapa</a>
-    </section>
-  </main>
-
-  <footer>
-    <span>MOU.TE! — Explora el moviment.</span>
-    <a href="#inici" style="color: inherit;">Tornar a l'inici ↑</a>
-  </footer>
+<header class="topbar">
+  <a class="brand" href="index.html">NEURO<span>MOTORS</span><i>✳</i></a>
+  <span class="top-note">COS · MOVIMENT · APRENENTATGE</span>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">UN MAPA PER DESCOBRIR EL COS</p>
+    <h1>El cos en<br><em>moviment.</em></h1>
+    <p class="intro">Una exploració de les habilitats, les capacitats i tot allò que ens permet moure'ns pel món.</p>
+    <p class="scroll-note">TRIA UN CERCLE PER COMENÇAR <span>↓</span></p>
+    <nav class="orbit-map" aria-label="Apartats del projecte">
+      <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+      <div class="core">MOU-TE<br>PEL MAPA<span>✳</span></div>
+      <a class="bubble bubble-home" href="index.html"><small>01 / COMENÇA</small><b>Pàgina<br>d'inici</b><span>↗</span></a>
+      <a class="bubble bubble-us" href="qui-som.html"><small>02 / EQUIP</small><b>Qui<br>som?</b><span>↗</span></a>
+      <a class="bubble bubble-skills" href="habilitats.html"><small>03 / ACCIÓ</small><b>Habilitats<br>motrius</b><span>↗</span></a>
+      <a class="bubble bubble-senses" href="capacitats.html"><small>04 / PERCEPCIÓ</small><b>Capacitats<br>perceptiu-motrius</b><span>↗</span></a>
+      <a class="bubble bubble-review" href="revisio.html"><small>05 / REFLEXIÓ</small><b>Revisió entre<br>iguals</b><span>↗</span></a>
+      <a class="bubble bubble-refs" href="referencies.html"><small>06 / FONTS</small><b>Referències<br>bibliogràfiques</b><span>↗</span></a>
+    </nav>
+    <div class="hero-sticker" aria-hidden="true">EL MOVIMENT<br>ÉS UNA FORMA<br>DE CONÈIXER ✳</div>
+  </section>
+  <section class="home-bottom">
+    <div><span class="section-tag">01 — PUNT DE PARTIDA</span><h2>Aprendre<br>també és <em>moure's.</em></h2></div>
+    <p>Aquest espai recull el nostre recorregut per la motricitat: conceptes, exemples i reflexions per entendre millor com percebem, controlem i expressem el moviment.</p>
+  </section>
+</main>
+<footer><span>NEUROMOTORS ©</span><span>Un projecte sobre el cos i el moviment</span><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">AMUNT ↑</a></footer>
 </body>
 </html>
-
