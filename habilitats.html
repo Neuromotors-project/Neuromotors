@@ -1,16 +1,395 @@
-<!doctype html>
-<html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Habilitats motrius — NEUROMOTORS</title><link rel="stylesheet" href="style.css"></head>
-<body><header class="topbar"><a class="brand" href="index.html">NEURO<span>MOTORS</span><i>✳</i></a><a class="back-link" href="index.html">← TORNAR AL MAPA</a></header>
-<main class="subpage">
-  <div class="page-kicker"><span>03 / ACCIÓ</span><span class="kicker-dot dot-coral"></span></div>
-  <h1>Habilitats<br><em>motrius.</em></h1>
-  <p class="lead">El repertori de moviments que fem servir per interactuar amb el món.</p>
-  <div class="skill-grid">
-    <article class="skill-card skill-coral"><span class="card-index">01</span><div class="shape shape-run">↗</div><h2>Desplaçaments</h2><p>Accions que ens permeten canviar de lloc, com caminar, córrer, reptar o saltar.</p></article>
-    <article class="skill-card skill-green"><span class="card-index">02</span><div class="shape shape-ball">●</div><h2>Salts i girs</h2><p>Moviments que impliquen enlairar-se, rotar o modificar l'orientació del cos.</p></article>
-    <article class="skill-card skill-blue"><span class="card-index">03</span><div class="shape shape-throw">↗</div><h2>Llançaments i recepcions</h2><p>Accions per impulsar, rebre o controlar objectes amb diferents parts del cos.</p></article>
-    <article class="skill-card skill-lilac"><span class="card-index">04</span><div class="shape shape-balance">〰</div><h2>Equilibris i control</h2><p>Accions que requereixen estabilitzar el cos i ajustar la postura.</p></article>
-  </div>
-  <p class="note">Aquestes categories són una base orientativa. Adapta les definicions i la classificació al material treballat a classe i afegeix exemples o fotografies pròpies.</p>
-  <a class="next-page" href="capacitats.html">SEGÜENT: CAPACITATS PERCEPTIU-MOTRIUS <span>↗</span></a>
-</main><footer><span>NEUROMOTORS ©</span><a href="index.html">TORNAR A L'INICI ↑</a></footer></body></html>
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supera el mirall motor | Neuromotors</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .hm-page {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 32px 22px 70px;
+      color: #29382f;
+    }
+
+    .hm-page * { box-sizing: border-box; }
+
+    .hm-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .hm-nav a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hm-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .9rem;
+    }
+
+    .hm-hero {
+      background: #dce8d6;
+      border-radius: 34px 34px 80px 34px;
+      padding: clamp(28px, 6vw, 65px);
+      margin-bottom: 28px;
+    }
+
+    .hm-kicker {
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .76rem;
+      font-weight: 700;
+    }
+
+    .hm-hero h1 {
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      line-height: 1.02;
+      margin: 15px 0;
+    }
+
+    .hm-hero p {
+      max-width: 620px;
+      line-height: 1.7;
+    }
+
+    .hm-tags {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .hm-tag {
+      background: rgba(255,255,255,.7);
+      padding: 9px 14px;
+      border-radius: 30px;
+      font-size: .85rem;
+    }
+
+    .hm-section { margin: 42px 0; }
+
+    .hm-section h2 {
+      font-size: clamp(1.65rem, 4vw, 2.3rem);
+      margin-bottom: 17px;
+    }
+
+    .hm-section p, .hm-section li {
+      line-height: 1.75;
+    }
+
+    .hm-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .hm-card {
+      padding: 23px;
+      border-radius: 25px;
+    }
+
+    .hm-card h3 { margin-top: 0; }
+
+    .hm-card p:last-child { margin-bottom: 0; }
+
+    .hm-pink { background: #f1d9d0; }
+    .hm-blue { background: #dce0f5; }
+    .hm-yellow { background: #f3e8bd; }
+    .hm-teal { background: #d8e9e6; }
+    .hm-lilac { background: #e9def1; }
+    .hm-green { background: #dce8d6; }
+
+    .hm-callout {
+      border-left: 4px solid #879c79;
+      padding: 8px 0 8px 18px;
+      margin: 20px 0;
+    }
+
+    .hm-diagram {
+      background: #f6f0e5;
+      border-radius: 28px;
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .hm-field {
+      border: 2px solid #9caf91;
+      border-radius: 20px;
+      padding: 20px 12px;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 22px;
+      background: #e6eddc;
+    }
+
+    .hm-player-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 10px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .hm-player {
+      background: #d6dff6;
+      border-radius: 50%;
+      width: 78px;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: .78rem;
+      font-weight: 700;
+      padding: 8px;
+    }
+
+    .hm-defender { background: #f2d5cb; }
+
+    .hm-cones {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      color: #b76b43;
+      font-size: 1.6rem;
+    }
+
+    .hm-goals {
+      display: flex;
+      justify-content: space-around;
+      gap: 10px;
+      text-align: center;
+      font-size: .85rem;
+    }
+
+    .hm-goal {
+      border: 2px dashed #8d9c81;
+      border-radius: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,.65);
+    }
+
+    .hm-small {
+      font-size: .85rem;
+      opacity: .8;
+    }
+
+    .hm-footer {
+      background: #29382f;
+      color: #fffdf7;
+      padding: 25px;
+      border-radius: 24px;
+      margin-top: 45px;
+    }
+
+    @media (max-width: 650px) {
+      .hm-grid { grid-template-columns: 1fr; }
+      .hm-nav { align-items: flex-start; }
+      .hm-links { gap: 9px; }
+      .hm-field { padding: 14px 6px; }
+      .hm-player { width: 68px; height: 68px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="hm-page">
+
+    <header class="hm-nav">
+      <a href="index.html"><strong>Neuromotors ↗</strong></a>
+      <nav class="hm-links" aria-label="Navegació principal">
+        <a href="index.html">Inici</a>
+        <a href="qui-som.html">Qui som</a>
+        <a href="habilitats.html">Habilitats</a>
+        <a href="capacitats.html">Capacitats</a>
+        <a href="revisio.html">Revisió</a>
+        <a href="referencies.html">Referències</a>
+      </nav>
+    </header>
+
+    <section class="hm-hero">
+      <div class="hm-kicker">Fitxa d'activitat · Futbol</div>
+      <h1>Supera el<br>mirall motor</h1>
+      <p>
+        Una tasca motriu que combina la conducció de pilota,
+        les fintes corporals, els girs i els canvis de direcció
+        per superar un adversari.
+      </p>
+      <div class="hm-tags">
+        <span class="hm-tag">10 participants</span>
+        <span class="hm-tag">12–16 anys</span>
+        <span class="hm-tag">Futbol extraescolar</span>
+      </div>
+    </section>
+
+    <section class="hm-section">
+      <h2>01 · Identitat motriu</h2>
+      <div class="hm-grid">
+        <article class="hm-card hm-pink">
+          <h3>Habilitat motriu principal</h3>
+          <p><strong>Habilitat motriu bàsica (HMB):</strong> maneig i control d'objectes, perquè la tasca se centra en l'ús d'un mòbil: la pilota.</p>
+          <p><strong>Tipus:</strong> conduccions realitzades amb els peus.</p>
+        </article>
+        <article class="hm-card hm-blue">
+          <h3>Habilitats secundàries</h3>
+          <ul>
+            <li><strong>Desplaçaments de velocitat:</strong> el jugador sense pilota corre per atrapar el company que la té.</li>
+            <li><strong>Girs simultanis amb carrera:</strong> tots dos participants giren sobre l'eix vertical per protegir la pilota o intentar atrapar l'adversari.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="hm-section">
+      <h2>02 · Objectius específics</h2>
+      <div class="hm-grid">
+        <article class="hm-card hm-green">
+          <h3>01 — Controlar</h3>
+          <p>Conduir la pilota amb diferents parts del peu mantenint el control visual de l'entorn.</p>
+        </article>
+        <article class="hm-card hm-yellow">
+          <h3>02 — Girar</h3>
+          <p>Girar ràpidament sobre l'eix vertical per protegir la pilota i orientar el desplaçament.</p>
+        </article>
+        <article class="hm-card hm-teal">
+          <h3>03 — Superar</h3>
+          <p>Córrer canviant de ritme i de direcció per superar la línia defensiva.</p>
+        </article>
+        <article class="hm-card hm-lilac">
+          <h3>04 — Decidir</h3>
+          <p>Observar l'adversari, fer una finta i escollir una porteria lateral per superar-lo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="hm-section">
+      <h2>03 · A qui s'adreça?</h2>
+      <div class="hm-card hm-yellow">
+        <p><strong>Edat:</strong> de 12 a 16 anys.</p>
+        <p><strong>Etapa evolutiva:</strong> pubertat i adolescència.</p>
+        <p><strong>Àmbit:</strong> activitat física en context educatiu, concretament futbol extraescolar.</p>
+        <p><strong>Nombre de participants:</strong> 10 persones, 7 nois i 3 noies.</p>
+        <p><strong>Historial motor:</strong> la majoria són joves en situació de vulnerabilitat, motivats per l'activitat física i acostumats a practicar-la amb amistats durant el temps lliure. Un educador de barri els ha ofert participar en aquesta activitat extraescolar per facilitar-los la possibilitat de formar part d'un equip malgrat disposar de pocs recursos.</p>
+      </div>
+    </section>
+
+    <section class="hm-section">
+      <h2>04 · Demanda de l'activitat motriu</h2>
+      <div class="hm-card hm-blue">
+        <div class="hm-kicker">DAM 2</div>
+        <h3>Un adversari, una decisió</h3>
+        <p>Aquesta tasca treballa la <strong>DAM 2</strong>, perquè només hi ha un adversari, sense cooperació ni col·laboració, i tampoc no hi ha incertesa en el medi.</p>
+      </div>
+    </section>
+
+    <section class="hm-section">
+      <h2>05 · Com es desenvolupa la tasca?</h2>
+      <div class="hm-card hm-pink">
+        <p>Dos jugadors surten simultàniament des de dues files oposades: un amb pilota i l'altre sense. S'apropen fins a arribar a una barrera de cons.</p>
+        <p>El jugador amb pilota ha de realitzar fintes corporals per enganyar el defensor i, a continuació, escollir una de les dues porteries laterals per superar-lo conduint la pilota.</p>
+        <p>El defensor ha d'intentar tocar l'atacant abans que arribi a la porteria, sense necessitat de prendre-li la pilota. Quan acaben, els dos jugadors canvien de fila.</p>
+      </div>
+    </section>
+
+    <section class="hm-section">
+      <h2>06 · Representació gràfica</h2>
+      <p class="hm-small">Esquema orientatiu de la disposició dels participants, els cons i les porteries.</p>
+      <div class="hm-diagram">
+        <div class="hm-field">
+          <div class="hm-player-row">
+            <div class="hm-player">Jugador<br>amb pilota ⚽</div>
+            <span aria-hidden="true">→</span>
+            <div class="hm-player hm-defender">Jugador<br>defensor</div>
+          </div>
+          <div class="hm-cones" aria-label="Barrera de cons">
+            <span>▲</span><span>▲</span><span>▲</span><span>▲</span><span>▲</span>
+          </div>
+          <div class="hm-goals">
+            <div class="hm-goal">Porteria<br>esquerra ←</div>
+            <div class="hm-goal">Porteria<br>dreta →</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hm-section">
+      <h2>07 · Variables de la tasca</h2>
+      <div class="hm-grid">
+        <article class="hm-card hm-lilac">
+          <h3>Variable cognitivomotriu</h3>
+          <p>L'entrenador decideix a quina porteria ha d'anar el jugador amb pilota quan arriba davant de la barrera de cons:</p>
+          <ul>
+            <li>Si diu un nombre parell, ha d'anar cap a la dreta.</li>
+            <li>Si diu un nombre senar, ha d'anar cap a l'esquerra.</li>
+          </ul>
+          <p>Per augmentar la dificultat, es poden proposar operacions matemàtiques adaptades al nivell dels participants. El resultat parell indica la dreta i el senar, l'esquerra.</p>
+        </article>
+        <article class="hm-card hm-teal">
+          <h3>Variable espaciotemporal</h3>
+          <p>Les porteries laterals se situen 2 metres més lluny que abans. Això dona més espai i temps al jugador sense pilota per atrapar l'adversari.</p>
+        </article>
+        <article class="hm-card hm-yellow">
+          <h3>Variable d'execució</h3>
+          <p>El jugador sense pilota deixa de limitar-se a tocar el company i ha d'intentar prendre-li la pilota. Això augmenta la dificultat de guanyar la ronda.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="hm-section">
+      <h2>08 · Criteris pedagògics</h2>
+      <div class="hm-grid">
+        <article class="hm-card hm-pink">
+          <h3>Seguretat</h3>
+          <p>Evitar contactes bruscos o entrades perilloses i utilitzar un calçat adequat per a la pista.</p>
+        </article>
+        <article class="hm-card hm-blue">
+          <h3>Comunicació</h3>
+          <p>Donar instruccions clares i senzilles, utilitzar senyals visuals i verbals i fomentar el diàleg entre companys.</p>
+        </article>
+        <article class="hm-card hm-green">
+          <h3>Participació</h3>
+          <p>Assegurar que tots els participants disposin d'un temps de pràctica similar, adaptar la dificultat a les seves capacitats i fomentar un ambient positiu.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="hm-section">
+      <h2>09 · Material i espai</h2>
+      <div class="hm-grid">
+        <article class="hm-card hm-yellow">
+          <h3>Material necessari</h3>
+          <ul>
+            <li>1 pilota de futbol.</li>
+            <li>7 cons.</li>
+          </ul>
+        </article>
+        <article class="hm-card hm-teal">
+          <h3>Espai</h3>
+          <p>Pavelló amb terra de parquet de 20 × 20 metres.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="hm-footer">
+      <p><strong>Neuromotors</strong></p>
+      <p>Aprendre a moure's, decidir i superar nous reptes.</p>
+      <a href="index.html" style="color:#fffdf7;">← Tornar a l'inici</a>
+    </footer>
+
+  </main>
+</body>
+</html>
