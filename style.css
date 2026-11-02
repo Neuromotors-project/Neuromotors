@@ -5,7 +5,7 @@
 @media(max-width:760px){.topbar{height:66px;padding:0 5vw}.top-note{display:none}.hero{padding:48px 4vw 35px;min-height:0}.hero h1{font-size:clamp(4rem,17vw,6rem)}.hero-sticker{display:none}.orbit-map{height:510px;margin-top:20px}.orbit-a{width:205px;height:205px}.orbit-b{width:280px;height:280px}.core{width:86px;height:86px;font-size:.55rem}.bubble{width:112px;height:112px;padding:8px}.bubble b{font-size:.78rem}.bubble small{font-size:.46rem;letter-spacing:.6px}.bubble-home{left:1%;top:0}.bubble-us{right:1%;top:0}.bubble-skills{left:0;bottom:8%}.bubble-senses{right:0;bottom:8%}.bubble-review{left:50%;top:31%;transform:translateX(-50%)}.bubble-review:hover{transform:translateX(-50%) scale(1.06)}.bubble-refs{left:50%;bottom:-1%;transform:translateX(-50%)}.bubble-refs:hover{transform:translateX(-50%) scale(1.06)}.home-bottom{grid-template-columns:1fr;padding:55px 7vw;gap:25px}.subpage{padding:45px 6vw 70px}.subpage h1{margin-top:35px}.two-columns{grid-template-columns:1fr;gap:15px;margin:50px 0}.skill-grid{grid-template-columns:1fr}.skill-card{min-height:260px}.sense-list article{grid-template-columns:55px 1fr 25px;gap:12px}.sense-symbol{width:50px;height:50px}.refs-intro{padding:25px;gap:20px;align-items:flex-start}.ref-stamp{width:80px;height:80px;font-size:.55rem}.refs-intro h2{font-size:1.6rem}footer{flex-wrap:wrap;font-size:.58rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 
-/* Secció de vídeo */
+
 .hm-video {
   width: 100%;
   max-width: 900px;
@@ -17,9 +17,9 @@
   box-shadow: 0 12px 30px rgba(35, 45, 38, 0.08);
 }
 
-.hm-video iframe {
+.hm-video video {
   display: block;
   width: 100%;
   height: 100%;
-  border: 0;
+  object-fit: contain;
 }
