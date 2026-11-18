@@ -82,3 +82,37 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* FORZAR LOS RECTÁNGULOS DE COLORES DEL APARTADO 011 */
+
+section.hm-valoracio .hm-valoracio-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+section.hm-valoracio .hm-valoracio-card {
+  display: block !important;
+  padding: 30px !important;
+  border-radius: 30px !important;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+section.hm-valoracio .hm-valoracio-card.hm-valoracio-groc {
+  background: #f4e8bd !important;
+}
+
+section.hm-valoracio .hm-valoracio-card.hm-valoracio-blau {
+  background: #d8eae7 !important;
+}
+
+@media (max-width: 768px) {
+  section.hm-valoracio .hm-valoracio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
