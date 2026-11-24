@@ -116,3 +116,53 @@ section.hm-valoracio .hm-valoracio-card.hm-valoracio-blau {
   }
 }
 
+
+/* Capacitats perceptiu-motrius */
+
+.capacitats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.capacitat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 170px;
+  padding: 25px;
+  border-radius: 28px;
+  text-align: center;
+  text-decoration: none;
+  color: #263b36;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.capacitat-groc {
+  background-color: #f4e8bd;
+}
+
+.capacitat-blau {
+  background-color: #d8eae7;
+}
+
+.capacitat-card h3 {
+  margin: 0 0 12px;
+}
+
+.capacitat-card span {
+  font-size: 0.9rem;
+}
+
+.capacitat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(35, 45, 38, 0.12);
+}
+
+@media (max-width: 768px) {
+  .capacitats-grid {
+    grid-template-columns: 1fr;
+  }
+}
