@@ -167,51 +167,56 @@ section.hm-valoracio .hm-valoracio-card.hm-valoracio-blau {
   }
 }
 
-
-/* Centrado vertical y horizontal de la página */
+/* CENTRADO REAL DE CAPACITATS */
 
 body:has(.capacitats-perceptiu) {
-  min-height: 100vh;
   margin: 0;
+  min-height: 100vh;
 }
 
 .capacitats-perceptiu {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  width: 100% !important;
   min-height: 100vh !important;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 40px 30px;
+  height: 100vh !important;
   margin: 0 !important;
+  padding: 0 30px !important;
+  box-sizing: border-box !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 .capacitats-perceptiu h2 {
-  width: 100%;
-  text-align: center;
-  margin: 0 0 45px;
+  text-align: center !important;
+  margin: 0 0 40px !important;
 }
 
 .capacitats-perceptiu .capacitats-grid {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 25px;
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 25px !important;
 }
 
 .capacitats-perceptiu .capacitat-card {
-  min-height: 200px;
+  min-height: 200px !important;
 }
 
 @media (max-width: 768px) {
   .capacitats-perceptiu {
-    padding: 40px 20px;
+    height: auto !important;
+    min-height: 100vh !important;
+    padding: 50px 20px !important;
   }
 
   .capacitats-perceptiu .capacitats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 }
