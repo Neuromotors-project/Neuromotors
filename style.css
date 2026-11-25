@@ -327,6 +327,101 @@ body:has(.capacitats-perceptiu) {
   font-weight: 600;
 }
 
+/* PORTADA INICIAL - EQUILIBRI */
+
+.eq-hero {
+  max-width: 1200px;
+  margin: 35px auto 75px;
+  padding: 65px 55px;
+  box-sizing: border-box;
+  border-radius: 35px;
+  background: linear-gradient(135deg, #d8eae7 0%, #c9e0dc 100%);
+  overflow: hidden;
+}
+
+.eq-hero-content {
+  max-width: 850px;
+}
+
+.eq-eyebrow {
+  display: inline-block;
+  background: #f4e8bd;
+  color: #263b36;
+  padding: 9px 17px;
+  border-radius: 30px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+}
+
+.eq-hero h1 {
+  color: #263b36;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 1;
+  margin: 0 0 15px;
+  letter-spacing: -2px;
+}
+
+.eq-hero h2 {
+  color: #344b44;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin: 0 0 18px;
+}
+
+.eq-hero-description {
+  color: #344b44;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 650px;
+  margin-bottom: 35px;
+}
+
+.eq-hero-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.eq-hero-item {
+  background: #f4e8bd;
+  padding: 17px 23px;
+  border-radius: 18px;
+  min-width: 125px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.eq-hero-item span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #52635c;
+}
+
+.eq-hero-item strong {
+  color: #263b36;
+  font-size: 1.15rem;
+}
+
+@media (max-width: 768px) {
+  .eq-hero {
+    margin: 20px 15px 50px;
+    padding: 40px 25px;
+    border-radius: 25px;
+  }
+
+  .eq-hero-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .eq-hero-item {
+    min-width: 0;
+  }
+}
+
 .eq-back a:hover {
   text-decoration: underline;
 }
