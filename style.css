@@ -166,3 +166,58 @@ section.hm-valoracio .hm-valoracio-card.hm-valoracio-blau {
     grid-template-columns: 1fr;
   }
 }
+
+/* Centrar la página de capacitats perceptiu-motrius */
+
+.capacitats-perceptiu {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 30px;
+  box-sizing: border-box;
+}
+
+/* Centrar el título */
+
+.capacitats-perceptiu h2 {
+  text-align: center;
+  margin-bottom: 45px;
+  font-size: 2.4rem;
+}
+
+/* Centrar y distribuir los tres bloques */
+
+.capacitats-grid {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+/* Dar más presencia a los bloques */
+
+.capacitat-card {
+  min-height: 200px;
+  border-radius: 28px;
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 768px) {
+  .capacitats-perceptiu {
+    min-height: auto;
+    padding: 70px 20px;
+  }
+
+  .capacitats-perceptiu h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .capacitats-grid {
+    grid-template-columns: 1fr;
+  }
+}
