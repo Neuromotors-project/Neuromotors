@@ -220,3 +220,131 @@ body:has(.capacitats-perceptiu) {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* =================================
+   PÀGINA D'EQUILIBRI
+================================= */
+
+.equilibri-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px;
+  color: #263b36;
+}
+
+.equilibri-page h1 {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.eq-section {
+  margin-bottom: 65px;
+  scroll-margin-top: 30px;
+}
+
+.eq-section > h2 {
+  margin-bottom: 25px;
+}
+
+.eq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.eq-card {
+  padding: 30px;
+  border-radius: 28px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.eq-yellow {
+  background-color: #f4e8bd;
+}
+
+.eq-blue {
+  background-color: #d8eae7;
+}
+
+.eq-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.eq-card h3:not(:first-child) {
+  margin-top: 25px;
+}
+
+.eq-card p,
+.eq-card li {
+  line-height: 1.8;
+}
+
+.eq-card ul {
+  padding-left: 22px;
+}
+
+.eq-full {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.eq-video {
+  width: 100%;
+  max-width: 950px;
+  aspect-ratio: 16 / 9;
+  margin: 20px auto 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e9e3d8;
+}
+
+.eq-video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.eq-image {
+  display: block;
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 18px;
+}
+
+.eq-back {
+  text-align: center;
+  margin: 50px 0 20px;
+}
+
+.eq-back a {
+  color: #263b36;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.eq-back a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .equilibri-page {
+    padding: 35px 18px;
+  }
+
+  .eq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eq-card {
+    padding: 23px;
+  }
+
+  .eq-section {
+    margin-bottom: 45px;
+  }
+}
