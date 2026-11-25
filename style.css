@@ -167,57 +167,51 @@ section.hm-valoracio .hm-valoracio-card.hm-valoracio-blau {
   }
 }
 
-/* Centrar la página de capacitats perceptiu-motrius */
+
+/* Centrado vertical y horizontal de la página */
+
+body:has(.capacitats-perceptiu) {
+  min-height: 100vh;
+  margin: 0;
+}
 
 .capacitats-perceptiu {
-  min-height: 75vh;
+  min-height: 100vh !important;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 50px 30px;
+  align-items: center;
   box-sizing: border-box;
+  padding: 40px 30px;
+  margin: 0 !important;
 }
-
-/* Centrar el título */
 
 .capacitats-perceptiu h2 {
+  width: 100%;
   text-align: center;
-  margin-bottom: 45px;
-  font-size: 2.4rem;
+  margin: 0 0 45px;
 }
 
-/* Centrar y distribuir los tres bloques */
-
-.capacitats-grid {
-  max-width: 1100px;
+.capacitats-perceptiu .capacitats-grid {
   width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 25px;
 }
 
-/* Dar más presencia a los bloques */
-
-.capacitat-card {
+.capacitats-perceptiu .capacitat-card {
   min-height: 200px;
-  border-radius: 28px;
 }
-
-/* Adaptación a móviles */
 
 @media (max-width: 768px) {
   .capacitats-perceptiu {
-    min-height: auto;
-    padding: 70px 20px;
+    padding: 40px 20px;
   }
 
-  .capacitats-perceptiu h2 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-  }
-
-  .capacitats-grid {
+  .capacitats-perceptiu .capacitats-grid {
     grid-template-columns: 1fr;
   }
 }
