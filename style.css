@@ -443,3 +443,13 @@ body:has(.capacitats-perceptiu) {
     margin-bottom: 45px;
   }
 }
+/* Redimensionar la representació gràfica d'Equilibri */
+
+.equilibri-page .eq-image {
+  display: block;
+  width: 65%;
+  max-width: 550px;
+  height: auto;
+  margin: 25px auto;
+  border-radius: 18px;
+}
